@@ -1,6 +1,6 @@
 # BR (Bartosz Rychlicki) Zend Components
 
-This is a growing library of quality components build during some commercial projects.
+This is a growing library of quality components for Zend Framework 1.11 build during some commercial projects.
 
 ## Br_Controller_Action_Helper_LimitChars
 This Action Helper together with little JavaScript plugin by Jan Jarfalk called "Limit"
@@ -12,18 +12,14 @@ It's very easy to use.
 ### Example ###
 Remember to register namespace of the plugin inside Your bootstrap like so:
 
-<code>
-Zend_Controller_Action_HelperBroker::addPrefix('Br_Controller_Action_Helper_');
-</code>
+    Zend_Controller_Action_HelperBroker::addPrefix('Br_Controller_Action_Helper_');
 
 And then, inside of action just invoke the plugin like so:
 
-<code>
-$this->_helper->LimitChars(array(
-  $form->getElement('about'),
-  $form->getElement('equipment'),
-), $this->view);
-</code>
+    $this->_helper->LimitChars(array(
+        $form->getElement('about'),
+        $form->getElement('equipment'),
+    ), $this->view);
 
 First argument is array of the \Zend_Form_Elements You want to initialize the plugin on,
 second argument is currently used view (for appending JavaScript).
