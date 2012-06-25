@@ -1,4 +1,4 @@
-# BR (Bartosz Rychlicki) Zend Components
+# BR (www.br-design.pl) Zend Components
 
 This is a growing library of quality components for Zend Framework 1.11 build during some commercial projects.
 
