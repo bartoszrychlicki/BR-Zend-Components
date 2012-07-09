@@ -26,6 +26,6 @@ second argument is currently used view (for appending JavaScript).
 
 ### Remember ###
 
-* Helper will overwrite description field on Your element if You have defined them.
+* Helper will append it's text to description field on Your element if You have defined them.
 * You need to have headScript helper invoked in Your view to add necessary JavaScript file
 

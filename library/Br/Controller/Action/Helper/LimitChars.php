@@ -43,10 +43,12 @@ class Br_Controller_Action_Helper_LimitChars extends \Zend_Controller_Action_Hel
                 if(!$limit > 0) {
                     throw new \InvalidArgumentException('Validator StringLength for element '.$element->getName(). 'does not have "max" option bigger than 0');
                 }
+                $description = $element->getDescription(); // we will append limiter to current description
                 $element->getDecorator("description")->setEscape(false);
-                $element->setDescription($view->translate(
-                    vsprintf("You have <span id=\"$elementId-charsLeft\"></span> chars left.", array($limit)))
+                $element->setDescription($description . '<br>' . $view->translate(
+                        vsprintf("You have <span id=\"$elementId-charsLeft\"></span> characters left", array($limit)))
                 );
+
                 $scriptToInclude .= "$('#$elementId').limit('$limit','#$elementId-charsLeft');";
             } else {
                 throw new \InvalidArgumentException('All elements in $element argument are not instance of \Zend_Form_Element');
